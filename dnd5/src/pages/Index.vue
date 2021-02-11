@@ -2,18 +2,7 @@
   <Layout>
 
     <div class="card-group pattern">
-      <div v-for="monster in $page.monsters" class="card">
-        <div class="card--content">
-          <p class="hed">{{monster.name}}</p>
-          <ul>
-            <li>{{monster.alignment}}</li>
-            <li>{{monster.hit_dice}}</li>
-            <li>{{monster.hit_points}}</li>
-            <li>{{monster.size}}</li>
-            <li v-for="(value, key) in monster.senses">{{key}} : {{value}}</li>
-          </ul>
-        </div>
-      </div>
+      <Card v-for="monster in $page.monsters" :monsterInfo="monster" />
     </div>
 
   </Layout>
@@ -21,24 +10,62 @@
 
 <page-query>
   query {
-    monsters (sort: _ID_ASC, limit: -1) {
+    monsters (limit: 100, sort: _ID_ASC) {
       name
       alignment
+      challenge_rating
+      actions {
+        name
+        damage {
+          damage_dice
+          damage_type {
+            index
+          }
+        }
+        desc
+      }
+      armor_class
+      charisma
+      constitution
+      damage_immunities
+      damage_resistances
+      damage_vulnerabilities
+      dexterity
       hit_dice
       hit_points
-      size
+      index
+      intelligence
+      languages
       senses {
         darkvision
         passive_perception
       }
+      size
+      speed {
+        burrow
+        climb
+        fly
+        hover
+        swim
+        walk
+      }
+      strength
+      subtype
+      type
+      url
+      wisdom
+      xp
     }
   }
 </page-query>
 
 <script>
+import Card from '~/components/card.vue'
+
+export default {
+  components: {
+    Card
+  }
+}
 
 </script>
-
-<style>
-
-</style>

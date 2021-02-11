@@ -10,5 +10,10 @@ export default function (Vue, { router, head, isClient }) {
     href: 'https://ghost.ship.computer/assets/css/main.css'
   })
 
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap'
+  })
+
   Vue.component('Layout', DefaultLayout)
 }

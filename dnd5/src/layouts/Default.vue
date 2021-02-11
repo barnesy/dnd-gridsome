@@ -9,7 +9,7 @@
     <div class="container">
       <slot/>
     </div>
-    
+
   </div>
 </template>
 
@@ -20,3 +20,11 @@ query {
   }
 }
 </static-query>
+
+<style scoped>
+
+  .container {
+    max-width: unset;
+  }
+
+</style>
