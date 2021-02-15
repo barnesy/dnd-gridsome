@@ -7,6 +7,7 @@
 module.exports = {
   siteName: 'DnD5',
   siteUrl: 'http://dnd5.barnesy.me',
+  pathPrefix: '/dnd-gridsome',
   plugins: [
     {
       use: 'gridsome-source-graphql',
