@@ -33,17 +33,6 @@
           </div>
         </div>
       </div>
-
-      <ul>
-
-        <!-- <li v-if="monster.damage_immunities">immunities: {{monster.damage_immunities}}</li>
-        <li v-if="monster.damage_resistances">resistances: {{monster.damage_resistances}}</li>
-        <li v-if="monster.damage_vulnerabilities">vulnerabilities: {{monster.damage_vulnerabilities}}</li> -->
-
-
-      </ul>
-      <p v-if="value" v-for="(value, key) in monster.senses">{{key}} : {{value}}</p>
-      <p>languages: {{monster.languages}}</p>
     </div>
   </div>
 </template>
