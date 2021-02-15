@@ -6,7 +6,7 @@
 
 module.exports = {
   siteName: 'DnD5',
-  siteUrl: 'https://iambarnesy.github.io',
+  siteUrl: 'https://dnd5.barnesy.me',
   pathPrefix: '/dnd-gridsome',
   plugins: [
     {
