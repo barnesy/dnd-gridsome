@@ -2,7 +2,7 @@
   <Layout>
 
     <div class="card-group pattern">
-      <Card v-for="monster in $page.monsters" :monsterInfo="monster" />
+      <Card v-for="monster in $page.monsters" :monsterInfo="monster" :key="monster.index" />
     </div>
 
   </Layout>
@@ -10,7 +10,7 @@
 
 <page-query>
   query {
-    monsters (limit: 100, sort: _ID_ASC) {
+    monsters (limit: 50, sort: _ID_ASC) {
       name
       alignment
       challenge_rating
