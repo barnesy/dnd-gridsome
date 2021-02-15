@@ -2,16 +2,24 @@
 
   <div class="base-stats" ref="baseStats">
 
-    <!-- <li>armor class: {{monster.armor_class}}
-      <div class="bar" :style="{width: getWidth(monster.armor_class)}"></div>
-    </li> -->
+    <div class="stat armor-class">
+      <div class="num">{{monster.armor_class}}</div>
+      <div class="desc">AC</div>
+    </div>
+    <div class="stat hit-points">
+      <div class="num">{{monster.hit_points}}</div>
+      <div class="desc">HP</div>
+    </div>
+    <div class="stat challenge">
+      <div class="num">{{monster.challenge_rating}}</div>
+      <div class="desc">({{monster.xp}} XP)</div>
+    </div>
 
-    <svg viewBox="0 0 380 380" height="380" width="380">
+    <svg viewBox="0 0 300 300" height="300" width="300">
 
-      <g transform="translate(190,190)" v-for="index in 50">
+      <g transform="translate(150,150)" v-for="index in 30">
         <g v-for="(ability, side) in abilities">
 
-          <circle style="fill:rgba(255,255,255,0.5)" :cx="getX(side, index)" :cy="getY(side, index)" r="1" />
           <line :x1="getX(side, index)" :y1="getY(side, index)" :x2="getX(side+1, index)" :y2="getY(side+1, index)" stroke="rgba(255,255,255,0.3)" />
 
           <g v-if="index == monster[abilities[side]] && abilities[side] == ability">
@@ -65,10 +73,43 @@ export default {
 
 .base-stats {
   height: 38rem;
-  width: 38rem;
+  width: 100%;
   background: blue;
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat {
+  position: absolute;
+  color: white;
+  font-size: 2.6rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+}
+
+.stat .desc {
+  font-size: 1rem;
+}
+
+.hit-points{
+  left: 2rem;
+  bottom: 2rem;
+}
+
+.armor-class{
+  left: 2rem;
+  top: 2rem;
+}
+
+.challenge {
+  right: 2rem;
+  top: 2rem;
 }
 
 .number {

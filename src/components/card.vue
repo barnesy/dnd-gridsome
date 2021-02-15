@@ -6,8 +6,6 @@
     <div class="card--content">
       <p class="hed">{{monster.name}}</p>
       <p>
-        HP: {{monster.hit_points}}<br/>
-        Challenge rating: {{monster.challenge_rating}} - ({{monster.xp}} XP)<br/>
         {{monster.size}} {{monster.type}} ({{monster.alignment}})<br/>
         {{monster.subtype}}
       </p>
